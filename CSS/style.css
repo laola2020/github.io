@@ -1,0 +1,290 @@
+/*
+esto es un comentario
+*/ 
+/* Apuntes de preguntas: 
+1. Cómo formateo CSS?
+2. me está fALTANDO UN CONTAINER? */
+* {
+    box-sizing: border-box;
+  }
+
+ 
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+  .grid-container {
+    display: grid;
+    background-color: chartreuse; /* puse color horrible para ver donde estoy parada mientras escribo el CSS*/
+    border-style: double;
+  }
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.topnav {
+  position:sticky;
+  overflow:hidden;
+  background-color: white;
+  border-style: dotted;
+  color:black;
+  padding:15px;
+  font-size: 18px;
+  font-family: 'Nunito', sans-serif;
+  text-align: right;
+ /* background-color: white; 
+    position: sticky;
+    border-style: dotted;
+    padding:15px;
+    
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
+    text-align: left;
+    z-index: 3; */
+}
+
+.topnav a {
+  position: sticky;
+  float: left;
+  display: block;
+  color:black;
+  font-size: 18px;
+  font-family: 'Nunito', sans-serif;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color:#f4f4f4; color:slateblue; 
+} 
+
+.topnav a.active {
+  background-color:slateblue; color:white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 990px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
+   .header{
+    background-color: white; 
+    position: sticky;
+    border-style: dotted;
+    padding:15px;
+    color:black;
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
+    text-align: left;
+    z-index: 3;} 
+.main
+{   position:relative;
+    border-style: dotted;
+    padding: 15px;
+    color:black;
+    font-size:  15px;
+    font-family: 'Nunito Sans', sans-serif;}
+
+iframe {
+  align-items: center;
+  max-width: 100%;
+  height: auto;
+  position: top;
+}  
+
+img {opacity: 1;
+      max-width: 100%;
+      height: auto;
+      position: top;
+}  
+
+.item img:hover
+{opacity: 0.2;
+transition-duration: 1s;
+transition-timing-function: ease-out;
+}
+
+iframe {
+  align-items: center;
+  max-width: 100%;
+  height: auto;
+  position: top;
+
+}  
+.footer
+{padding: 15px;
+      position: relative;
+      border-style: dotted;
+      bottom:0%;
+      background-color:rgb(42, 22, 97);
+      color:white;
+      font-size:15px;
+      font-family: 'Nunito', sans-serif;
+  }
+
+  /* tengo que poner el media query abajo proque si no me cambia el estilo de las etiquetas main y foter y se rompe todo-
+  -Aún así no responde el media query para mobile
+  -No despliega menú el botón hamburguesa*/
+
+  
+/* 48em = 768px 
+
+@media (min-width: 990px) {
+  .header li {
+    float: left;
+    color:white;
+  }
+  .header li a {
+    padding: 0px 6px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+ .header .menu-icon {
+    display:none;
+  }*/
+  
+
+@media only screen and (max-width: 600px) {
+  [class*="col-"] {
+    width: 100%;
+  }
+
+
+
+
+   
+
+
+/*-----------------------------------------------
+.menu{
+    position: sticky;
+    border-style: dotted;
+    padding:15px;
+    top:0%;
+    color:black;
+    background-color: white;
+    font-size:18px;
+    font-family: 'Nunito', sans-serif;
+    text-align: right;*/
+
+/*input[required]{
+    background-color: rgb(219, 219, 219);
+}
+
+.item {
+    border-width: 2px;
+    border-color: hotpink;
+    display: inline;}
+
+ a:hover {
+        color:slateblue; }
+        a:active{
+            background-color:slateblue; ;color:white;
+        }
+
+ img {opacity: 1;
+            max-width: 100%;
+            height: auto;
+            position: top;
+    }  
+
+.item img:hover
+{
+    opacity: 0.2;
+transition-duration: 1s;
+transition-timing-function: ease-out;
+}
+
+      
+      @media only screen and (min-width: 600px) {
+         For mobile phones:
+        [class*="col-"] {
+          width: 100%;
+        }
+        @media only screen and (max-width: 990px) {
+            /* For iPad: 
+            [class*="col-"] {
+              width: 100%;
+            }
+
+/*table {position: relative;}
+td {padding-top: 15px;
+    margin-bottom: 20px;
+    border-style: dotted;
+    
+    }*/
+
+    /*animation-name: changeOpacity;
+    animation-duration: 2s;
+}
+
+    @keyframes changeOpacity{
+    from {opacity:1}
+    to {opacity:0.3}*/
+
+
+
+
+/*header {
+    display: none;
+    flex-direction: row;
+    }
+    @import url(index.css);
+    @media only screen and (min-width: 600px) {
+        header{
+            display: flex;
+        }
+    }
+/*@import url(header.css);*/
+
+/*background:rgb(69, 56, 151)*/ 
+   
+
+/*provisoriamente le ponemos a IMAGENES un borde punteado para delimitarlas claramente durante el rpocesos de diseño
+img{border-style: dotted;}*/
+
+/* a continuación tenemos un selector super es[pecifico sin ir a class ni Id: lo encontré con F12 haciendo click sobre el elemto, copiar / copiar selector (ojo que hay que mantener la ruta como ruta absoluta)
+body > main > table:nth-child(6) > tbody > tr > td:nth-child(2) > img
+{border-style: double;} */
